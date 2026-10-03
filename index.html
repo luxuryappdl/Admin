@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =====================================================
+         PWA
+    ====================================================== -->
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#000000">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta name="apple-mobile-web-app-title" content="DL Luxury">
+
+
+    <title>DL Luxury - Administración</title>
+
+
+    <!-- =====================================================
+         CSS PRINCIPAL
+    ====================================================== -->
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         ESTILO BOTÓN INSTALAR PWA
+    ====================================================== -->
+
+    <style>
+        /* =====================================================
+           BOTÓN DE DESCARGA / INSTALACIÓN
+        ====================================================== */
+
+        #botonInstalarPWA {
+
+            display: flex !important;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 42px;
+
+            height: 42px;
+
+            min-width: 42px;
+
+            min-height: 42px;
+
+            margin-right: 12px;
+
+            padding: 0;
+
+            border: 1px solid rgba(212, 175, 55, 0.65);
+
+            border-radius: 50%;
+
+            background: #000000;
+
+            color: #D4AF37;
+
+            cursor: pointer;
+
+            transition: all 0.25s ease;
+
+            font-size: 17px;
+
+            flex-shrink: 0;
+
+            position: relative;
+
+            z-index: 99999;
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        /* =====================================================
+           HOVER
+        ====================================================== */
+
+        #botonInstalarPWA:hover {
+
+            background: #D4AF37;
+
+            color: #000000;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 15px rgba(212, 175, 55, 0.30);
+
+        }
+
+
+        /* =====================================================
+           CLICK
+        ====================================================== */
+
+        #botonInstalarPWA:active {
+
+            transform: scale(0.94);
+
+        }
+
+
+        /* =====================================================
+           ICONO
+        ====================================================== */
+
+        #botonInstalarPWA i {
+
+            transition: transform 0.25s ease;
+
+            pointer-events: none;
+
+        }
+
+
+        #botonInstalarPWA:hover i {
+
+            transform: translateY(2px);
+
+        }
+
+
+        /* =====================================================
+           TOOLTIP
+        ====================================================== */
+
+        #botonInstalarPWA::after {
+
+            content: "Instalar DL Luxury";
+
+            position: absolute;
+
+            top: calc(100% + 10px);
+
+            right: 0;
+
+            background: #111111;
+
+            color: #ffffff;
+
+            padding: 7px 10px;
+
+            border-radius: 6px;
+
+            font-size: 12px;
+
+            white-space: nowrap;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition: all 0.2s ease;
+
+            z-index: 99999;
+
+            border: 1px solid rgba(212, 175, 55, 0.40);
+
+        }
+
+
+        #botonInstalarPWA:hover::after {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        /* =====================================================
+           CONTENEDOR DEL USUARIO
+        ====================================================== */
+
+        .usuario {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            #botonInstalarPWA {
+
+                width: 38px;
+
+                height: 38px;
+
+                min-width: 38px;
+
+                min-height: 38px;
+
+                margin-right: 8px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- =================================================
+             LOGO
+        ================================================== -->
+
+        <div class="logo">
+
+            <div class="logo-dl">
+                DL
+            </div>
+
+            <div class="logo-luxury">
+                LUXURY
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MENÚ PRINCIPAL
+        ================================================== -->
+
+        <nav>
+
+
+            <!-- INICIO -->
+
+            <button class="menu active" onclick="mostrarSeccion('inicio', this)">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Inicio
+                </span>
+
+            </button>
+
+
+            <!-- GORRAS -->
+
+            <button class="menu" onclick="window.location.href='gorras.html'">
+
+                <i class="fa-solid fa-hat-cowboy"></i>
+
+                <span>
+                    Gorras
+                </span>
+
+            </button>
+
+
+            <!-- PLAYERAS -->
+
+            <button class="menu" onclick="window.location.href='playeras.html'">
+
+                <i class="fa-solid fa-shirt"></i>
+
+                <span>
+                    Playeras
+                </span>
+
+            </button>
+
+
+            <!-- HOODIES -->
+
+            <button class="menu" onclick="window.location.href='hoodies.html'">
+
+                <i class="fa-solid fa-vest"></i>
+
+                <span>
+                    Hoodies
+                </span>
+
+            </button>
+
+
+            <!-- PERFUMES -->
+
+            <button class="menu" onclick="window.location.href='perfumes.html'">
+
+                <i class="fa-solid fa-spray-can-sparkles"></i>
+
+                <span>
+                    Perfumes
+                </span>
+
+            </button>
+
+
+            <!-- ACCESORIOS -->
+
+            <button class="menu" onclick="window.location.href='accesorios.html'">
+
+                <i class="fa-solid fa-gem"></i>
+
+                <span>
+                    Accesorios
+                </span>
+
+            </button>
+
+
+            <!-- DESCUENTOS -->
+
+            <button class="menu" onclick="window.location.href='descuentos.html'">
+
+                <i class="fa-solid fa-tags"></i>
+
+                <span>
+                    Descuentos
+                </span>
+
+            </button>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main class="contenido">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <h1>
+                DL Luxury
+            </h1>
+
+
+            <div class="usuario">
+
+
+                <!-- =================================================
+                     BOTÓN INSTALAR PWA
+                ================================================== -->
+
+                <button id="botonInstalarPWA" type="button" aria-label="Instalar DL Luxury" title="Instalar DL Luxury">
+
+                    <i class="fa-solid fa-download"></i>
+
+                </button>
+
+
+                <!-- =================================================
+                     USUARIO
+                ================================================== -->
+
+                <div class="usuario-icono">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <span>
+                    Administrador
+                </span>
+
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             INICIO
+        ================================================== -->
+
+        <section id="inicio" class="seccion activa">
+
+
+            <!-- =================================================
+                 BIENVENIDA
+            ================================================== -->
+
+            <div class="inicio-contenido">
+
+
+                <div class="texto-inicio">
+
+                    <span class="mini-titulo">
+                        PANEL DE ADMINISTRACIÓN
+                    </span>
+
+
+                    <h2>
+
+                        Bienvenido a
+
+                        <span>
+                            DL Luxury
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+                        Administra tus productos, pedidos,
+                        inventario y rendimiento desde un solo lugar.
+                    </p>
+
+                </div>
+
+
+
+                <!-- LOGO GRANDE -->
+
+                <div class="logo-grande">
+
+                    <strong>
+                        DL
+                    </strong>
+
+                    <span>
+                        LUXURY
+                    </span>
+
+                    <small>
+                        ADMINISTRATION
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+            <div class="encabezado-seccion">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        RESUMEN
+                    </span>
+
+                    <h2>
+                        Dashboard
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MÉTRICAS
+            ================================================== -->
+
+            <div class="metricas-grid">
+
+
+                <!-- VENTAS -->
+
+                <div class="card-metrica">
+
+                    <div class="metrica-info">
+
+                        <span>
+                            Ventas
+                        </span>
+
+                        <h3 id="totalVentas">
+                            Q0.00
+                        </h3>
+
+                    </div>
+
+                    <div class="metrica-icono verde">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INGRESOS -->
+
+                <div class="card-metrica">
+
+                    <div class="metrica-info">
+
+                        <span>
+                            Ingresos
+                        </span>
+
+                        <h3 id="totalIngresos">
+                            Q0.00
+                        </h3>
+
+                    </div>
+
+                    <div class="metrica-icono azul">
+
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EGRESOS -->
+
+                <div class="card-metrica">
+
+                    <div class="metrica-info">
+
+                        <span>
+                            Egresos
+                        </span>
+
+                        <h3 id="totalEgresos">
+                            Q0.00
+                        </h3>
+
+                    </div>
+
+                    <div class="metrica-icono morado">
+
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GANANCIA -->
+
+                <div class="card-metrica">
+
+                    <div class="metrica-info">
+
+                        <span>
+                            Ganancia
+                        </span>
+
+                        <h3 id="gananciaTotal">
+                            Q0.00
+                        </h3>
+
+                    </div>
+
+                    <div class="metrica-icono dorado">
+
+                        <i class="fa-solid fa-sack-dollar"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCTOS VENDIDOS -->
+
+                <div class="card-metrica">
+
+                    <div class="metrica-info">
+
+                        <span>
+                            Productos vendidos
+                        </span>
+
+                        <h3 id="productosVendidos">
+                            0
+                        </h3>
+
+                    </div>
+
+                    <div class="metrica-icono dorado">
+
+                        <i class="fa-solid fa-box"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TOTAL PRODUCTOS -->
+
+                <div class="card-metrica">
+
+                    <div class="metrica-info">
+
+                        <span>
+                            Total de productos
+                        </span>
+
+                        <h3 id="totalProductos">
+                            0
+                        </h3>
+
+                    </div>
+
+                    <div class="metrica-icono dorado">
+
+                        <i class="fa-solid fa-boxes-stacked"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STOCK DISPONIBLE -->
+
+                <div class="card-metrica">
+
+                    <div class="metrica-info">
+
+                        <span>
+                            Stock disponible
+                        </span>
+
+                        <h3 id="stockTotal">
+                            0
+                        </h3>
+
+                    </div>
+
+                    <div class="metrica-icono verde">
+
+                        <i class="fa-solid fa-boxes-stacked"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STOCK BAJO -->
+
+                <div class="card-metrica">
+
+                    <div class="metrica-info">
+
+                        <span>
+                            Stock bajo
+                        </span>
+
+                        <h3 id="stockBajo">
+                            0
+                        </h3>
+
+                    </div>
+
+                    <div class="metrica-icono morado">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SELECTOR DE AÑO
+            ================================================== -->
+
+            <div class="selector-año-container">
+
+                <div class="selector-año-info">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    <div>
+
+                        <span>
+                            AÑO SELECCIONADO
+                        </span>
+
+                        <strong id="añoActual">
+                            2026
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="selector-año">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <select id="selectorAño">
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PEDIDOS DE CLIENTES
+            ================================================== -->
+
+            <div class="encabezado-seccion" style="margin-top: 40px;">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        PEDIDOS
+                    </span>
+
+                    <h2>
+                        Pedidos de clientes
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LISTA DE PEDIDOS
+            ================================================== -->
+
+            <div class="ventas-recientes">
+
+                <h3>
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    Pedidos recibidos
+
+                </h3>
+
+
+                <div id="listaPedidos">
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 INVENTARIO
+            ================================================== -->
+
+            <div class="encabezado-seccion inventario-inicio" style="margin-top: 40px;">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        INVENTARIO
+                    </span>
+
+                    <h2>
+                        Inventario de productos
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TABLA DE INVENTARIO
+            ================================================== -->
+
+            <div class="ventas-recientes">
+
+                <h3>
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                    Stock actual
+
+                </h3>
+
+
+                <table class="tabla-ventas">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Producto
+                            </th>
+
+                            <th>
+                                Categoría
+                            </th>
+
+                            <th>
+                                Precio
+                            </th>
+
+                            <th>
+                                Stock
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="listaStock">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+
+    <!-- =====================================================
+         INSTALACIÓN PWA
+    ====================================================== -->
+
+    <script>
+
+        /* =====================================================
+           DL LUXURY
+           INSTALADOR PWA
+        ====================================================== */
+
+        let deferredPrompt = null;
+
+
+        /* =====================================================
+           BOTÓN
+        ====================================================== */
+
+        const botonInstalarPWA =
+            document.getElementById("botonInstalarPWA");
+
+
+        /* =====================================================
+           COMPROBAR BOTÓN
+        ====================================================== */
+
+        if (botonInstalarPWA) {
+
+            console.log(
+                "DL Luxury: botón de instalación encontrado."
+            );
+
+        } else {
+
+            console.error(
+                "DL Luxury: no se encontró el botón de instalación."
+            );
+
+        }
+
+
+        /* =====================================================
+           CUANDO CHROME PERMITE INSTALAR
+        ====================================================== */
+
+        window.addEventListener(
+            "beforeinstallprompt",
+            function (event) {
+
+                event.preventDefault();
+
+                deferredPrompt = event;
+
+                console.log(
+                    "DL Luxury: instalación PWA disponible."
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           CLICK DEL BOTÓN
+        ====================================================== */
+
+        if (botonInstalarPWA) {
+
+            botonInstalarPWA.addEventListener(
+                "click",
+                async function () {
+
+                    console.log(
+                        "DL Luxury: botón instalar presionado."
+                    );
+
+
+                    /* =========================================
+                       SI CHROME YA ENTREGÓ EL INSTALADOR
+                    ========================================= */
+
+                    if (deferredPrompt) {
+
+                        deferredPrompt.prompt();
+
+
+                        const resultado =
+                            await deferredPrompt.userChoice;
+
+
+                        console.log(
+                            "Resultado de instalación:",
+                            resultado.outcome
+                        );
+
+
+                        deferredPrompt = null;
+
+                        return;
+
+                    }
+
+
+                    /* =========================================
+                       SI TODAVÍA NO HAY INSTALADOR
+                    ========================================= */
+
+                    alert(
+                        "La instalación de DL Luxury todavía no está disponible en este navegador."
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           PWA INSTALADA
+        ====================================================== */
+
+        window.addEventListener(
+            "appinstalled",
+            function () {
+
+                console.log(
+                    "DL Luxury fue instalada correctamente."
+                );
+
+                deferredPrompt = null;
+
+            }
+        );
+
+
+        /* =====================================================
+           DETECTAR SI YA ESTÁ INSTALADA
+        ====================================================== */
+
+        function estaInstaladaComoPWA() {
+
+            return (
+
+                window.matchMedia(
+                    "(display-mode: standalone)"
+                ).matches
+
+                ||
+
+                window.navigator.standalone === true
+
+            );
+
+        }
+
+
+        /* =====================================================
+           INFORMACIÓN DE ESTADO
+        ====================================================== */
+
+        if (estaInstaladaComoPWA()) {
+
+            console.log(
+                "DL Luxury está ejecutándose como aplicación instalada."
+            );
+
+        }
+
+    </script>
+
+
+
+    <!-- =====================================================
+         SCRIPT PRINCIPAL
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- =====================================================
+         SCRIPT ADICIONAL
+    ====================================================== -->
+
+    <script src="adonvent.js"></script>
+
+
+
+    <!-- =====================================================
+         SCRIPT DE ADMINISTRACIÓN
+    ====================================================== -->
+
+    <script src="admin.js"></script>
+
+
+
+    <!-- =====================================================
+         SCRIPT DE PEDIDOS
+    ====================================================== -->
+
+    <script src="pedidos-admin.js"></script>
+
+
+
+    <script src="anos.js"></script>
+
+    <!-- =====================================================
+         SERVICE WORKER - PWA
+    ====================================================== -->
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener(
+                "load",
+                function () {
+
+                    navigator.serviceWorker
+                        .register("./sw.js")
+
+                        .then(
+                            function (registration) {
+
+                                console.log(
+                                    "DL Luxury PWA activada correctamente",
+                                    registration
+                                );
+
+                            }
+                        )
+
+                        .catch(
+                            function (error) {
+
+                                console.error(
+                                    "Error al activar la PWA:",
+                                    error
+                                );
+
+                            }
+                        );
+
+                }
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

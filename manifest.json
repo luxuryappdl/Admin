@@ -1,0 +1,26 @@
+{
+    "id": "/Adminstracion/index.html",
+    "name": "Drip Luxury Administracion",
+    "short_name": "Drip Luxury administración",
+    "description": "DL Luxury - Sistema de administración y ventas",
+    "start_url": "/Adminstracion/index.html",
+    "scope": "/Adminstracion/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/Adminstracion/icono1.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/Adminstracion/icono2.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
