@@ -1,7 +1,7 @@
 {
     "id": "/Adminstracion/index.html",
     "name": "Drip Luxury Administracion",
-    "short_name": "Drip Luxury administración",
+    "short_name": "Drip Luxury",
     "description": "DL Luxury - Sistema de administración y ventas",
     "start_url": "/Adminstracion/index.html",
     "scope": "/Adminstracion/",
